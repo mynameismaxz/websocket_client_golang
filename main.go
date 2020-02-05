@@ -9,8 +9,6 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-// var addr = flag.String("addr", "api.debug.rtt.in.th:11055", "http service address")
-
 func main() {
 	// load environment data
 	loadEnvironment()
