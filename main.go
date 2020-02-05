@@ -16,13 +16,13 @@ func main() {
 	loadEnvironment()
 
 	// get parameter name
-	wsUrl := os.Getenv("HOSTNAME")
+	wsURL := os.Getenv("HOSTNAME")
 	protocolWs := os.Getenv("PROTOCOL")
 
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
 
-	u := url.URL{Scheme: protocolWs, Host: wsUrl}
+	u := url.URL{Scheme: protocolWs, Host: wsURL}
 	log.Printf("connecting to %s", u.String())
 
 	c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
